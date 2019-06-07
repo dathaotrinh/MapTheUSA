@@ -30,6 +30,8 @@ package cityproject;
 import javax.swing.*;
 import java.util.*;
 import java.io.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class CityProject {
 
@@ -179,6 +181,15 @@ public class CityProject {
             City removedCity = s.get(i);
             System.out.println("        to: " + removedCity.getName() 
                                 + " distance: " + removedCity.getBestDistance());
+        }
+        
+        VoiceAssistant voice = new VoiceAssistant();
+        try {
+            
+            voice.speakUp("The shortest distance from " + source.getName()
+                    + " to " + s.get(0).getName() + " is " + s.get(0).getBestDistance());
+        } catch (IOException ex) {
+            Logger.getLogger(CityProject.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
