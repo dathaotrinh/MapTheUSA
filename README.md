@@ -31,11 +31,13 @@ Additionally, a set U of all unvisited vertices should be initialized to include
             a.	For each vetex adjacent to currentVertex, 
                 determine if there is a new shortest path to vertices adjacent to currentVertex 
                 through currentVertex.
+                
                     If there is a new shortest path to a vertex through the currentVertex
                         update its bestDistance and immediatePredecessor values 
                         (This step is referred to as “relaxation”.  
                         We are updating the shortest path for vertices adjacent to the current vertex 
-                        if there is a new shortest path from the source to a vertex through the current vertex.)
+                        if there is a new shortest path from the source to a vertex 
+                        through the current vertex.)
                         
             b.	Mark currentVertex as visited.
             
