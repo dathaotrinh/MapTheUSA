@@ -32,14 +32,15 @@ import java.util.*;
 import java.io.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import marytts.exceptions.SynthesisException;
 
 public class CityProject {
 
     // set up a JFrame to hold the canvas
     static JFrame frame = new JFrame();
-    
+   
     // main metod for the project
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, SynthesisException {
 
         City[] cities = new City[200]; //array of cities (Vertices) max = 200
         for (int i = 0; i < cities.length; i++) {
@@ -77,7 +78,7 @@ public class CityProject {
     //************************************************************************
     
     // this method uses Dijkstra's algorithm to find the shortest path from city to city
-    public static void mapShortestPath(City[] cities, int cityCount, Edge[] links, int linkCount){
+    public static void mapShortestPath(City[] cities, int cityCount, Edge[] links, int linkCount) throws IOException, SynthesisException{
         
         // ask User to input where they are 
         // and where they are heading to
@@ -184,13 +185,11 @@ public class CityProject {
         }
         
         VoiceAssistant voice = new VoiceAssistant();
-        try {
-            
-            voice.speakUp("The shortest distance from " + source.getName()
-                    + " to " + s.get(0).getName() + " is " + s.get(0).getBestDistance());
-        } catch (IOException ex) {
-            Logger.getLogger(CityProject.class.getName()).log(Level.SEVERE, null, ex);
-        }
+
+		
+        voice.speakUp("The shortest distance from " + source.getName()
+                + " to " + s.get(0).getName() + " is " + s.get(0).getBestDistance());
+        
     }
     
     private static City[] addEdges(City c)
@@ -454,6 +453,7 @@ public class CityProject {
        
         int width = 1500; // width of the Canvas
         int height = 900; // heightof the Canvas 
+        frame.setAlwaysOnTop(true);
         
         frame.setTitle("U.S. Cities");
         frame.setSize(width, height);
@@ -468,7 +468,7 @@ public class CityProject {
   static void drawMap2(int cCount, City[] c, int lCount, Edge[] l, City source, Stack<City> s)
    {
         NewMap canvas = new NewMap(cCount,  c, lCount, l, source ,s);
-
+        //frame.setAlwaysOnTop(true);
         frame.getContentPane().removeAll();
         
         // add the canvas to the frame as a content panel
