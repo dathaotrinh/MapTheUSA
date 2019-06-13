@@ -3,7 +3,7 @@
 
 ## Overview
 
- * This software package creates a graph of cities in the Unitied States with links between the cities. 
+ * This software package creates a graph of cities in the Unitied States with links between the cities, then finds the shortest path from one city to another using Dijkstra's Algorithm. 
 
 ## Features
 
