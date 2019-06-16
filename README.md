@@ -64,6 +64,6 @@ to solve the single source, all destinations shortest paths.
 
 #### Click on the image to see the video
  
- [![image](https://github.com/jtrinh21/MapTheUSA/blob/master/Screenshot%20(1).png)](https://www.youtube.com/watch?v=azTfjYxVu4M&t=2s)
+ [![image](https://github.com/jtrinh21/MapTheUSA/blob/master/Screenshot%20(1).png)](https://www.youtube.com/watch?v=iRK5IX6ztlM&feature=youtu.be)
 
    
